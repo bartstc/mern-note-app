@@ -13,6 +13,10 @@ const Note = new Schema({
   editing: {
     type: Boolean,
     required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 });
 

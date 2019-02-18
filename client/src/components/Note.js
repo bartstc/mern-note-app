@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Moment from 'react-moment';
 
 const Note = props => {
   const { note, index, editNote, doneEdit, cancelEdit, deleteNote } = props;
-  const { _id, editing, titleValue, descriptionValue } = props.note;
+  const { _id, editing, titleValue, descriptionValue, date } = props.note;
 
   return (
     <li className="note-item">
@@ -13,6 +14,7 @@ const Note = props => {
           &times;
         </div>
       </div>
+      <Moment className="note-item-date" format="YYYY.MM.DD, HH:mm">{date}</Moment>
 
       {!editing &&
         <div

@@ -9,7 +9,9 @@
 }
 
 .note-container {
-  max-width: 1200px;
+  width: 100vw;
+  /* max-width: 1200px; */
+  padding: 5px;
   margin: 10px auto;
   display: flex;
   flex-direction: column;
@@ -62,9 +64,10 @@ input:-webkit-autofill:active  {
 
 @media (min-width: 700px) {
   .note-list {
+    padding: 15px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2em;
+    grid-gap: 1em;
   }
 
   .note-item {
@@ -80,6 +83,22 @@ input:-webkit-autofill:active  {
   }
 }
 
+@media (min-width: 1300px) {
+  .note-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2em;
+  }
+}
+
+@media (min-width: 1600px) {
+  .note-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 2em;
+  }
+}
+
 .note-item {
   display: flex;
   flex-direction: column;
@@ -87,7 +106,7 @@ input:-webkit-autofill:active  {
   font-size: 14px;
   padding: 0 12px;
   min-height: 300px;
-  min-width: 300px;
+  width: 300px;
   margin-bottom: 2em;
   box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, .05);
   border-radius: 5px;
@@ -96,6 +115,7 @@ input:-webkit-autofill:active  {
 @media (min-width: 700px) {
   .note-item {
     margin-bottom: 0;
+    width: 100%;
   }
 }
 
@@ -103,12 +123,17 @@ input:-webkit-autofill:active  {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  line-height: .2em;
 }
 
 .note-item-title {
   font-weight: 500;
   font-size: 1.2em;
   text-transform: capitalize;
+}
+
+.note-item-date {
+  color: #555;
 }
 
 .remove-item {

@@ -105,7 +105,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="note-container">
-          <h1 className="heading">Note</h1>
+          <h1 className="heading">New note</h1>
 
           <AddNote
             handleChange={this.handleChange}
