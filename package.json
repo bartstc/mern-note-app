@@ -8,7 +8,7 @@
   },
   "main": "server.js",
   "scripts": {
-    "build": "./client/node_modules/.bin/webpack --config webpack.conf.js"
+    "build": "./client/package.json npm run build"
   },
   "author": "Bart",
   "license": "ISC",
