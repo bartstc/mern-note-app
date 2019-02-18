@@ -7,9 +7,6 @@
     "npm": "6.7.0"
   },
   "main": "server.js",
-  "scripts": {
-    "build": "./client/package.json npm run build"
-  },
   "author": "Bart",
   "license": "ISC",
   "dependencies": {

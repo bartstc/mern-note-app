@@ -15,7 +15,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    axios.get('http://localhost:4000/notes/')
+    axios.get('/notes')
       .then(res => {
         this.setState({
           notes: res.data
@@ -44,14 +44,14 @@ class App extends Component {
         titleValue: ''
       });
 
-      axios.post('http://localhost:4000/notes/', newNote);
+      axios.post('/notes', newNote);
     };
   };
 
   deleteNote = _id => {
     this.setState({ notes: this.state.notes.filter(note => note._id !== _id) });
 
-    axios.delete(`http://localhost:4000/notes/${_id}`);
+    axios.delete(`/notes/${_id}`);
   };
 
   editNote = (note, index) => {
@@ -86,7 +86,7 @@ class App extends Component {
       return { notes };
     });
 
-    axios.post(`http://localhost:4000/notes/${note._id}`, note);
+    axios.post(`/notes/${note._id}`, note);
   };
 
   cancelEdit = (note, index) => {
