@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const AddItem = props => {
+const AddItem = ({ handleChange, addNote, titleValue }) => {
   return (
     <input
       maxLength="25"
-      onChange={props.handleChange}
-      onKeyUp={props.addNote}
+      onChange={handleChange}
+      onKeyUp={addNote}
       name="titleValue"
-      value={props.titleValue}
+      value={titleValue}
       type="text"
       className="note-input"
     />

@@ -5,6 +5,7 @@ import '../App.css';
 
 import Note from './Note';
 import AddNote from './AddNote';
+import Spinner from './Spinner';
 
 class App extends Component {
   state = {
@@ -102,6 +103,8 @@ class App extends Component {
   };
 
   render() {
+    const { titleValue, notes } = this.state;
+
     return (
       <div className="App">
         <div className="note-container">
@@ -110,14 +113,15 @@ class App extends Component {
           <AddNote
             handleChange={this.handleChange}
             addNote={this.addNote}
-            titleValue={this.state.titleValue}
+            titleValue={titleValue}
           />
+          {notes.length === 0 && <Spinner />}
           <ReactCSSTransitionGroup
             className="note-list"
             transitionName="fade"
             transitionEnterTimeout={200}
             transitionLeaveTimeout={200}>
-            {this.state.notes.map((note, index) => (
+            {notes.map((note, index) => (
               <Note
                 key={index}
                 note={note}
